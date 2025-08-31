@@ -11,7 +11,7 @@ import { Server } from "socket.io";
 const app = express();
 const server = http.createServer(app);
 
-//Initializw socket.io server
+// Initialize and configure Socket.IO for real-time communication
 export const io = new Server(server, {
     cors: { origin: "*" }
 })
@@ -53,5 +53,5 @@ if(process.env.NODE_ENV !== "production"){
     server.listen(PORT, () => console.log("Server is running on PORT: "+ PORT));
 }
 
-//Export server for Vercal
+// Export Express server for Vercel hosting
 export default server;
