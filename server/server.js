@@ -7,7 +7,7 @@ import userRouter from "./routes/userRoutes.js";
 import messageRouter from "./routes/messageRoutes.js";
 import { Server } from "socket.io";
 
-//create Express app and Http server
+// Create an Express application and HTTP server
 const app = express();
 const server = http.createServer(app);
 
@@ -45,7 +45,7 @@ app.use("/api/status", (req, res) => res.send("Server is live"));
 app.use("/api/auth", userRouter);
 app.use("/api/messages", messageRouter)
 
-//connect to mongoDb
+// Connect to MongoDB database
 await connectDB();
 
 if(process.env.NODE_ENV !== "production"){
